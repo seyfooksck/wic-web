@@ -270,53 +270,7 @@ WordPress ve benzeri CMS'lerin uzantısız URL yapısını destekler:
 - `/contact` → `contact.html`
 - `/blog/post-title` → `blog/post-title.html`
 
-## 🚀 GitHub Actions ile NPM Otomatik Yayınlama
 
-Repository'nize `.github/workflows/npm-publish.yml` dosyası ekleyin:
-
-```yaml
-name: NPM Publish
-
-on:
-  release:
-    types: [published]
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          registry-url: 'https://registry.npmjs.org'
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run tests
-        run: npm test
-      
-      - name: Publish to NPM
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-```
-
-**Kurulum Adımları:**
-
-1. **NPM Token Oluşturun:**
-   ```bash
-   npm login
-   npm token create
-   ```
-
-2. **GitHub Secrets Ekleyin:**
-   - GitHub repository → Settings → Secrets and variables → Actions
-   - `NPM_TOKEN` adında secret ekleyin
-
-3. **Release Oluşturun:**
-   - GitHub'da yeni release oluşturduğunuzda otomatik olarak NPM'e yayınlanacak
 
 ## 🛠️ Geliştirme
 
@@ -360,3 +314,4 @@ Herhangi bir hata bulursanız, lütfen [GitHub Issues](https://github.com/seyfoo
 ## ⭐ Destek
 
 Bu proje yararlıysa, lütfen ⭐ vererek destekleyin!
+
