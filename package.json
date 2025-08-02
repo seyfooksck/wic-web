@@ -1,13 +1,14 @@
 {
   "name": "wic-web",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Advanced web scraper for downloading complete website themes with WordPress support and folder hierarchy",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "node test.js",
     "example": "node test.js",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "release": "npm version patch && git push && git push --tags"
   },
   "repository": {
     "type": "git",
